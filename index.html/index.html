@@ -1,0 +1,147 @@
+<html>
+
+<head>
+	<title>Izzati Portfolio</title>
+	<link rel="stylesheet" href="Project style.css"> 
+	
+</head>
+
+<body>
+
+<nav>
+  <ul> 
+	<li><a href="index.html">Home</a></li>
+    <li><a href= "Project About Me.html"> About Me</a></li>
+	<li><a href= "Project Experience.html"> Experience</a></li>
+    <li><a href="Project education.html"> Education
+    </a></li>
+	<li><a href= "Project Family.html"> Family</a></li>
+	<li><a href= "Project Gallery.html"> Gallery</a></li>
+  </ul>
+</nav>
+
+
+<header style="border:solid 4px #fff7e4">
+
+<div class="center-img">
+
+<img src = "izy.png" alt="header image">
+  </div>
+  
+<h1 style="color:white;text-align:center"> Welcome to Izzati Digital Portfolio ᯓ★ˎˊ˗</h1>
+
+</header>
+
+
+ <main>
+ <p>
+<h1 style="color:white;text-align:left"> </h1>
+
+	<section id = "start" class="section-hidden">
+		<div class="intro-content">
+		<p> Assalamualaikum and Hi everyone!! I'm Izzati, a Information Management student from UiTM Kedah. I am now in my final semester of my diploma. <p> Keep my name in your prayers for ease, strength and success ✰. It means a lot to me.
+			</p> This website will give you a glimpse of my life, from my :
+				 <ul class="features-list">
+				  <li><a href="Project About Me.html"> About Me</a></li>
+				  <li><a href="Project Experience.html"> Experience</a></li>
+				  <li><a href="Project education.html"> Education</a></li>
+				  <li><a href="Project Family.html">Family</a></li>
+				  <li><a href="Project Gallery.html">Gallery</a></li>
+			 </ul>
+				 <p> Thank you for visiting — enjoy exploring!!!<p>
+				 </div>
+				 </section>
+			 
+	<section id="contact" class="section-hidden">
+		<div class="contact-content">
+		  <h2>Get In Touch</h2>
+		  <p>Feel free to contact me via:</p>
+		  <div class="contact-methods">
+			<div class="contact-method">
+			  <h3>Email</h3>
+			  <p><a href="mailto:iadilah391@gmail.com">iadilah391@gmail.com</a></p>
+			</div>
+			<div class="contact-method">
+			  <h3>WhatsApp</h3>
+			  <p><a href="https://wa.me/60138780255">013 878 0255</a></p>
+			</div>
+			<div class="contact-method">
+			  <h3>LinkedIn</h3>
+			  <p><a href="www.linkedin.com/in/izzati-adilah-binti-che-sab-709633377">Izzati Adilah</a></p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+</main>
+
+<footer>
+        <div class="container">
+            <p>&copy; 2025 ᶻ 𝗓 𐰁 Izzatiics. All Rights Reserved.</p>
+        </div>
+		<div class="info-dates">
+		<span><strong>Created:</strong> 2025-11-24</span>
+        <span><strong>Data Collected:</strong> 2025-11-27</span>
+        <span><strong>Last Updated:</strong> <span id="last-modified">Loading...</span></span>
+    </div>
+    
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Scroll Reveal Animation
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+                entry.target.classList.remove('section-hidden');
+            }
+        });
+    }, observerOptions);
+	
+	document.querySelectorAll('.section-hidden').forEach(section => {
+        observer.observe(section);
+    });
+	
+	document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Automatically fetches the last save date of your file
+    const lastMod = new Date(document.lastModified);
+    
+    // Formats it to a nice readable style
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    const formattedDate = lastMod.toLocaleDateString('en-US', options);
+    
+    // Updates the HTML element
+    const lastModElement = document.getElementById('last-modified');
+    if (lastModElement) {
+        lastModElement.textContent = formattedDate;
+    }
+});
+
+</script>
+
+ </body>
+ </html>
